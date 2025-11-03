@@ -1,8 +1,13 @@
+// src/app/layout.tsx
+
 export const metadata = {
   title: "RES LLC | Rambuilt Estimating Services",
   description:
     "Accurate, fast, and reliable building-material takeoffs for residential, multi-family, and commercial projects. Remote estimating made simple and precise.",
   metadataBase: new URL("https://www.rambuiltestimating.com"),
+  icons: {
+    icon: "/favicon.png", // your favicon in /public
+  },
   openGraph: {
     title: "RES LLC | Rambuilt Estimating Services",
     description:
@@ -28,15 +33,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        {/* ✅ Favicon */}
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        {/* ✅ Page Title */}
-        <title>RES LLC | Rambuilt Estimating Services</title>
-      </head>
+      {/* No <head> here — Next.js injects it automatically from `metadata` */}
       <body className="antialiased">{children}</body>
     </html>
   );
 }
+
 
 
